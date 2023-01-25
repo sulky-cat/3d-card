@@ -1,4 +1,4 @@
-export class CardHover {
+class CardHover {
 	constructor(wrapper, options) {
 		// Установка настроек
 		let defaultOptions = {
