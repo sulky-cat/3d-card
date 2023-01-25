@@ -1,6 +1,6 @@
 # 3d Card hover
 
-[Демо страница](https://sulky-cat.github.io/3d-card-demo/)
+[Демо страница](https://sulky-cat.github.io/3d-card/demo)
 
 html структура может быть любой, но стили прописаны для такой 
 ```html
