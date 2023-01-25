@@ -11,14 +11,13 @@ class CardHover {
 		this.wrapper = wrapper
 		// Глубина
 		this.distanceCoef = this.wrapper.dataset.distance ? +this.wrapper.dataset.distance : this.options.distanceCoef
-		console.log(this.distance);
 		// Передача событиям контекста this
 		this.rotateToMouse = this.rotateToMouse.bind(this)
 		this.initHover = this.initHover.bind(this)
 		this.destroyHover = this.destroyHover.bind(this)
 
-		// Если не на телефоне, тогда инициализация
-		if (!this.wrapper.closest('.touch')) this.init()
+		// Инициализация
+		this.init()
 	}
 
 	// Инициализация
