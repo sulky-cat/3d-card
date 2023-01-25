@@ -1,5 +1,7 @@
 # 3d-card
 
+[Демо](https://sulky-cat.github.io/3d-card-demo/)
+
 html структура может быть любой, но стили прописаны для такой 
 ```html
 <div data-wrapper-hover data-distance="2">
