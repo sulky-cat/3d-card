@@ -1,0 +1,63 @@
+[data-wrapper-hover] {
+	// Осн. настройки
+	--scale: 1; // - изначальный scale. Не меняется в js
+	--rotate-x: 0; // - наклон для карточки по Х. Меняется через js
+	--rotate-y: 0; // - наклон для карточки по Y. Меняется через js
+	--rotate-z: 0; // - наклон для карточки по Z. Не меняется в js
+	--distance: 0deg; // - настройка для глубины
+
+	// Повторение движение мыши
+	--x-move: 0px; // - повторяет движение мыши по карточке по оси X. Меняется через js
+	--y-move: 0px; // - повторяет движение мыши по карточке по оси Y. Меняется через js
+
+	// Эффект света
+	--glow-color-circle: rgba(41, 41, 41, 0.1); // - кружок
+	--glow-color-bg: rgba(41, 41, 41, 0.1); // - фон остальной карточки для контраста
+
+	position: relative;
+	transform-style: preserve-3d;
+
+	&._hover_ {
+		// Изменение стилей при наведении
+		--scale: 1.08;
+		--glow-color-circle: rgba(255, 255, 255, 0.3);
+	}
+}
+
+[data-card-hover] {
+	// Если нужен 3D эффект для элементов
+	// transform-style: preserve-3d;
+
+	transform: perspective(1500px) scale3d(var(--scale), var(--scale), var(--scale))
+		rotate3d(var(--rotate-x), var(--rotate-y), var(--rotate-z), var(--distance));
+
+	will-change: transform;
+
+	// Transition settings
+	transition-delay: 0s;
+	transition-property: transform, box-shadow;
+	transition-timing-function: ease-out;
+	transition-duration: 300ms;
+
+	box-shadow: 0 1px 5px #00000099;
+
+	._hover_ & {
+		transition-duration: 150ms;
+		box-shadow: 0 5px 20px 5px #00000044;
+	}
+
+	// Эффект света
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 1;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		background-image: radial-gradient(
+			circle at var(--x-move) var(--y-move),
+			var(--glow-color-circle),
+			var(--glow-color-bg)
+		);
+	}
+}
