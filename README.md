@@ -1,6 +1,6 @@
-# 3d-card
+# 3d Card hover
 
-[Демо](https://sulky-cat.github.io/3d-card-demo/)
+[Демо страница](https://sulky-cat.github.io/3d-card-demo/)
 
 html структура может быть любой, но стили прописаны для такой 
 ```html
@@ -35,3 +35,21 @@ new CardHover(element, {
 При инициализации, для оболочки добавляется класс `_init_`.
 
 При наведении на карточку, для оболочки добавляется класс `_hover_`, по которому можно изменять css переменные так, как нужно.
+
+## Пример реализации: 
+```html
+<div data-wrapper-hover data-distance="2">
+  <div data-card-hover></div>
+</div>
+```
+
+```js
+const cards = document.querySelectorAll('[data-wrapper-hover]')
+if (cards.length) {
+	cards.forEach(element => {
+		const card = new CardHover(element, {
+
+		})
+	});
+}```
+
