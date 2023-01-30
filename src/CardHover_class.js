@@ -35,7 +35,6 @@ class CardHover {
 	}
 	// Событие при наведении
 	initHover() {
-		this.bounds = this.wrapper.getBoundingClientRect()
 		this.wrapper.classList.add('_hover_')
 		document.addEventListener('mousemove', this.rotateToMouse)
 		this.wrapper.removeEventListener('mouseenter', this.rotateToMouse)
@@ -43,6 +42,7 @@ class CardHover {
 	}
 	// Подсчет координат для изменения карточки
 	rotateToMouse(e) {
+		this.bounds = this.wrapper.getBoundingClientRect()
 		const mouseX = e.clientX;
 		const mouseY = e.clientY;
 		const leftX = mouseX - this.bounds.x;
